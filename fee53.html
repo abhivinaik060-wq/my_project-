@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getInfo()">Get Browser Info</button>
+    <script>
+        function getInfo() {
+            alert("Browser:"+navigator.appName+
+            "\nVersion:"+navigator.appVersion+
+            "\nPlatform:"+navigator.platform+
+            "\nLanguage:"+navigator.language+
+            "\nOnline:"+navigator.onLine);
+        }
+    </script>
+</body>
+</html>

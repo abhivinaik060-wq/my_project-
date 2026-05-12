@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Password Attempts</title>
+</head>
+<body>
+    <h2>3 Attempts Allowed</h2>
+    <input type="password" id="pwd">
+    <button onclick="check()">Submit</button>
+    <p id="msg"></p>
+    <script>
+        let attempts=0;
+        function check(){
+            attempts++;
+            if(document.getElementById("pwd").value==="admin"){
+                document.getElementById("msg").innerText="Access Granted";
+            }
+            else if(attempts<3){
+                document.getElementById("msg").innerHTML="Wrong password.Attempts left:"+(3-attempts);
+            } else{
+                document.getElementById("msg").innerText="Account Locked";
+            }
+        }
+    </script>
+</body>
+</html>

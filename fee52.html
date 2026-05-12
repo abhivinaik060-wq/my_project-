@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="testWindow()">Click Me</button>
+    <script>
+        function testWindow(){
+            alert("Welcome!");
+            let name = prompt("Enter your name:");
+            if(name!=null){
+                let confirmMeg=confirm("Is your name "+name+"?");
+                if(confirmMeg){
+                    let newWin=window.open("https://www.google.com","_blank");
+                    setTimeout(()=>{
+                        newWin.close();
+                    },3000);    
+                    }
+            }
+        }
+    </script>
+</body>
+</html>

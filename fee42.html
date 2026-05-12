@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Even Number Animation</h3>
+    <div id="output"></div>
+
+    <script>
+        let numbers = [1,2,3,4,5,6];
+
+        let evens = numbers.filter(n => n % 2 === 0);
+        let doubled = evens.map(n => n * 2);
+
+        let i = 0;
+
+        function show(){
+            if(i < doubled.length){
+                document.getElementById("output").innerHTML += doubled[i] + " ";
+                i++;
+                setTimeout(show, 1000);
+            }
+        }
+        show();
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Discounted products</h3>
+    <div id="output"></div>
+    <SCRIPT>
+        let products=[
+            {name:"Laptop",price:5000},
+            {name:"Mouse" ,price:500},
+            {name:"Phone",price:30000},
+            {name:"Pen",price:50}
+        ];
+        let costly=products.filter(p=>p.price>1000);
+        let discounted=costly.map(p=>({
+            name:p.name,
+            newPrice:p.price*0.8
+        }));
+        let i=0;
+        function showProducts(){
+            if(i<discounted.length){
+                document.getElementById("output").innerHTML+=discounted[i].name+":╣"+discounted[i].newPrice+"<br>";
+                i++;
+                setTimeout(showProducts,1000);
+            }
+        }
+        showProducts();
+    </SCRIPT>
+</body>
+</html>

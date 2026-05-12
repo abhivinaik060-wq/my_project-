@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial;
+            background-color:aqua;
+        }
+.container{
+    width:400px;
+    margin:auto;
+    background-color:white;
+    padding:20px;
+    border-radius:10px;
+}       
+ button {
+    margin-top:10px;
+    width:100%;
+ }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <h2>Student Registration</h2>
+    <input type="text" id="name" placeholder="Student Name"><br><br>
+    <input type="number" id="m1" placeholder="Marks1"><br><br>
+    <input type="number" id="m2" placeholder="Marks2"><br><br>
+    <input type="number" id="m3" placeholder="Marks3"><br><br>
+    <button onclick="calculate()">Calculate Result</button>
+    <p id="output"></p>
+    </div>
+    <script>
+        function calculate(){
+            let name=document.getElementById("name").value;
+            let m1=Number(document.getElementById("m1").value);
+            let m2=Number(document.getElementById("m2").value);
+            let m3=Number(document.getElementById("m3").value);
+            if(name===""||m1===0||m2===0||m3===0){
+                document.getElementById("output").innrtHTML="Please fill all fields with valid data.";
+                return;
+            }
+            let total=getTotal(m1,m2,m3);
+            let percentage=getPercentage(total);
+            let grade=getGrade(percentage);
+             document.getElementById("output").innerText=
+             `Name: ${name}\nTotal: ${total}\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`;
+        }
+        function getTotal(m1,m2,m3){
+            return m1+m2+m3;
+        }
+        function getPercentage(total){
+            return (total/300)*100;
+        }
+        function getGrade(percentage){
+            if(percentage>=90) return "A";
+            else if(percentage>=80) return "B";
+            else if(percentage>=70) return "C";
+            else if(percentage>=60) return "D";
+            else return "F";
+        }
+    </script>
+</body>
+</html>

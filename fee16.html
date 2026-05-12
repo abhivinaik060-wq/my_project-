@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Page</h2>
+    <input type="text" id="user" placeholder="Username"><br><br>
+    <input type="password" id="pass" placeholder="password"><br><br>
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+    <script>
+        function login(){
+            let u=document.getElementById("user").value;
+            let p=document.getElementById("pass").value;
+            if (u==="admin" && p==="123"){
+                document.getElementById("msg").innerHTML="Login Successful";
+            }
+            else{
+                document.getElementById("msg").innerHTML="Invalid Credentials";
+            }
+        }
+    </script>
+</body>
+</html>

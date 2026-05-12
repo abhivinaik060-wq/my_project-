@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <H2>Click button to start</H2>
+    <button onclick="showDialog()">Click Me</button>
+<script>
+    function showDialog(){
+        let name = prompt("What is your name?");
+let confirmName = confirm("Is your name " + name + "?");
+    }
+if (confirmName) {
+    alert("Welcome " + name + "!");
+} else {
+    alert("Please try again.");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call by Reference</title>
+</head>
+<body>
+    <h2>Call by Reference Example</h2>
+    <p id="output"></p>
+    <script>
+        function updateSalary(emp){
+            emp.salary = emp.salary + 5000;  
+        }
+        let employee = {
+            name: "John",
+            salary: 80000
+        };
+        document.getElementById("output").innerHTML =
+            "Salary before update: " + employee.salary;
+        updateSalary(employee);   
+        document.getElementById("output").innerHTML +=
+            "<br>Salary after update: " + employee.salary;
+    </script>
+</body>
+</html>
